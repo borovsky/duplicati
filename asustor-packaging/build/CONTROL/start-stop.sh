@@ -6,13 +6,16 @@ PID_FILE=/var/run/duplicati-server.pid
 
 MONO_CMD=/usr/local/bin/mono
 
+# export TMPDIR to set sqlite temporary database location
+export TMPDIR=$APKG_PKG_DIR/tmp
+
 case $1 in
 
 	start)
 		# start script here
 		cd $APKG_PKG_DIR/
 		if [ ! -d tmp ]; then mkdir tmp; fi
-		$MONO_CMD Duplicati.Server.exe --webservice-port=8201 --webservice-interface=* --log-retention=30D --server-datafolder=$APKG_PKG_DIR/config --tempdir=$APKG_PKG_DIR/tmp > /dev/null &
+		$MONO_CMD $APKG_PKG_DIR/Duplicati.Server.exe --webservice-port=8201 --webservice-interface=* --webservice-allowed-hostnames=* --log-retention=30D --server-datafolder=$APKG_PKG_DIR/config --tempdir=$APKG_PKG_DIR/tmp > /dev/null &
 		echo $! > $PID_FILE
 		;;
 

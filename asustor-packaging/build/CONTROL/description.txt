@@ -1,5 +1,8 @@
 Free backup software to store encrypted backups online.
+WARNING : Duplicati is still beta-software, and should not be used for production or sensible data
+
 Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive " S3, Google Drive, box.com, Mega, hubiC and many others.
-Backup files and folders with strong AES-256 encryption. Save space with incremental backups and data deduplication. Run backups on any machine through the web-based interface or via command line interface. Duplicati has a built-in scheduler and auto-updater.
+Backup files and folders with strong AES-256 encryption. Save space with incremental backups and data deduplication. Run backups on any machine through the web-based interface or via command line interface. 
 
 Duplicati web interface will run on port 8201.
+This package installs the base version, further updates will be available throught the application auto-updater

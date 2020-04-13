@@ -7,7 +7,7 @@ case "$APKG_PKG_STATUS" in
 	install)
 		# post install script here
                 cd $APKG_PKG_DIR/
-                $MONO_CMD mozroots.exe --import --sync --url "http://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt" > /dev/null 
+		/usr/local/AppCentral/mono/bin/mozroots --sync --quiet
 		;;
 	upgrade)
 		# post upgrade script here (restore data)
